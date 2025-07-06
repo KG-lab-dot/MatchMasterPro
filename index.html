@@ -878,6 +878,18 @@
                 const titleScore = this.fuzzyMatch(bbTitle, intTitle);
                 const artistScore = this.fuzzyMatch(bbArtist, intArtist);
                 const writerScore = this.fuzzyMatch(bbWriter, intWriter);
+
+                console.log({
+                            bbTitle,
+                            intTitle,
+                            titleScore,
+                            bbArtist,
+                            intArtist,
+                            artistScore,
+                            bbWriter,
+                            intWriter,
+                            writerScore
+                            });
                 
                 // Calculate weighted score
                 const totalScore = (titleScore * this.settings.titleWeight) + 

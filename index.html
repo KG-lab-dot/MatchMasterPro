@@ -916,13 +916,20 @@
             }
 
             getFieldValue(record, possibleFields) {
-                for (const field of possibleFields) {
-                    if (record[field]) {
-                        return this.cleanText(record[field]);
-                    }
-                }
-                return '';
-            }
+    const normalizedKeys = Object.keys(record).reduce((map, key) => {
+        map[key.trim().toLowerCase()] = key;
+        return map;
+    }, {});
+
+    for (const field of possibleFields) {
+        const lower = field.trim().toLowerCase();
+        if (normalizedKeys[lower]) {
+            const realKey = normalizedKeys[lower];
+            return this.cleanText(record[realKey]);
+        }
+    }
+    return '';
+}
 
             cleanText(text) {
                 if (!text) return '';

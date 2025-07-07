@@ -897,6 +897,20 @@
                 const totalScore = (titleScore * this.settings.titleWeight) + 
                                  (artistScore * this.settings.artistWeight) + 
                                  (writerScore * this.settings.writerWeight);
+
+                console.log({
+                            bbTitle,
+                            intTitle,
+                            titleScore,
+                            bbArtist,
+                            intArtist,
+                            artistScore,
+                            bbWriter,
+                            intWriter,
+                            writerScore,
+                            totalScore
+                           });
+
                 
                 return Math.min(100, totalScore);
             }

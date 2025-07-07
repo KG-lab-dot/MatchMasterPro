@@ -707,7 +707,9 @@
                     if (values.length > 0) {
                         const row = {};
                         headers.forEach((header, index) => {
-                            row[header] = values[index] || '';
+                            let value = values[index];
+                            row[header] = value ? value.trim() : '';
+
                         });
                         data.push(row);
                     }

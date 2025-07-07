@@ -804,6 +804,9 @@
             async startMatching() {
                 this.showProgress();
                 this.hideMessages();
+
+                console.log("Sample internal record:", this.internalData[0]);
+                console.log("Sample blackbox record:", this.blackboxData[0]);
                 
                 try {
                     await this.performMatching();
@@ -815,9 +818,6 @@
                     this.hideProgress();
                 }
             }
-
-            console.log("Sample internal record:", this.internalData[0]);
-            console.log("Sample blackbox record:", this.blackboxData[0]);
 
             async performMatching() {
                 const progressFill = document.getElementById('progressFill');

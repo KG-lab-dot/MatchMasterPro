@@ -636,6 +636,8 @@
                         throw new Error('No data found in file');
                     }
 
+                    console.log(`[${type.toUpperCase()} FILE HEADERS]`, Object.keys(data[0]));
+
                     if (type === 'internal') {
                         this.internalData = data;
                     } else {

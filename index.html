@@ -814,6 +814,9 @@
                 }
             }
 
+            console.log("Sample internal record:", this.internalData[0]);
+            console.log("Sample blackbox record:", this.blackboxData[0]);
+
             async performMatching() {
                 const progressFill = document.getElementById('progressFill');
                 const progressText = document.getElementById('progressText');
